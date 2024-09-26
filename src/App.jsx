@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import { NasaCard } from "./components/NasaCard";
 
 function App() {
