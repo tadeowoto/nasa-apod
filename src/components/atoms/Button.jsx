@@ -1,8 +1,8 @@
-
+import React from "react";
 export function Button() {
 
     return (
-        <a href="https://www.nasa.gov" className="decoration-none" target="_blank">
+        <a href="https://www.nasa.gov" className="decoration-none" target="_blank" rel="noreferrer">
         <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded transition-colors duration-300 mt-4"
         >

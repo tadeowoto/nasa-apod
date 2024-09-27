@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
 import { NasaCard } from "./components/molecules/NasaCard";
 import { NasaHeader } from "./components/organisms/NasaHeader";
 import { NasaFooter } from "./components/organisms/NasaFooter";
+import { useEffect, useState } from "react";
+import React from "react";
 function App() {
 
   const [apiData, setApiData] = useState({});
@@ -16,7 +17,7 @@ function App() {
 
     <>
     <NasaHeader />
-    <section className="bg-mainbg w-full h-screen flex justify-center items-center ">
+    <section className="bg-mainbg min-h-screen flex justify-center items-center ">
       <NasaCard
         title={apiData.title}
         image={apiData.url}
@@ -24,10 +25,10 @@ function App() {
       />
     </section>
     <NasaFooter />
-    </>
+    </> 
     
     
-  );
+  )
 }
 
 export default App;
