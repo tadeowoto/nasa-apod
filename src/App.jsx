@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { NasaCard } from "./components/NasaCard";
-
+import { NasaCard } from "./components/molecules/NasaCard";
+import { NasaHeader } from "./components/organisms/NasaHeader";
+import { NasaFooter } from "./components/organisms/NasaFooter";
 function App() {
 
   const [apiData, setApiData] = useState({});
@@ -12,8 +13,19 @@ function App() {
   }, []); // quiero que se ejecute una sola vez cuando reenderiza el componente
 
   return (
+
+    <>
+    <NasaHeader />
+    <section className="bg-mainbg w-full h-screen flex justify-center items-center ">
+      <NasaCard
+        title={apiData.title}
+        image={apiData.url}
+        description={apiData.explanation}
+      />
+    </section>
+    <NasaFooter />
+    </>
     
-      <NasaCard title={apiData.title} image={apiData.url} description={apiData.explanation}/>
     
   );
 }
