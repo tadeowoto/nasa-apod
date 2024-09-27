@@ -16,15 +16,17 @@ function App() {
   return (
 
     <>
-    <NasaHeader />
-    <section className="bg-mainbg min-h-screen flex justify-center items-center ">
-      <NasaCard
-        title={apiData.title}
-        image={apiData.url}
-        description={apiData.explanation}
-      />
-    </section>
-    <NasaFooter />
+    <div className="flex flex-col min-h-screen">
+        <NasaHeader />
+        <section className="bg-mainbg flex-grow flex justify-center items-center">
+          <NasaCard
+            title={apiData.title}
+            image={apiData.url}
+            description={apiData.explanation}
+          />
+        </section>
+        <NasaFooter />
+    </div>
     </> 
     
     
