@@ -1,7 +1,12 @@
 import PropTypes from "prop-types";
 import { Button } from "../atoms/Button";
 import React from "react";
-export function NasaCard({ title, image, description }) {
+export function NasaCard({ title, image, description, isLoading }) {
+
+  if(isLoading){
+    return <article className="bg-cardbg max-w-4xl w-full h-96  gap-4 p-4 box-border rounded-2xl shadow-lg" />
+  }
+
   return (
     <article className="bg-cardbg max-w-4xl w-full max-h-[90vh] h-auto flex flex-col justify-center items-center gap-4 p-4 box-border rounded-2xl shadow-lg">
       <div className="w-full flex flex-col justify-center items-center">
@@ -30,4 +35,5 @@ NasaCard.propTypes = {
   title: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  isLoading: PropTypes.bool.isRequired
 }

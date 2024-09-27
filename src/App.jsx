@@ -6,11 +6,13 @@ import React from "react";
 function App() {
 
   const [apiData, setApiData] = useState({});
+  const[ isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetch("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
       .then((response) => response.json())
-      .then((data) => setApiData(data));
+      .then((data) => setApiData(data))
+      .finally(() => setIsLoading(false))
   }, []); // quiero que se ejecute una sola vez cuando reenderiza el componente
 
   return (
@@ -23,6 +25,7 @@ function App() {
             title={apiData.title}
             image={apiData.url}
             description={apiData.explanation}
+            isLoading={isLoading}
           />
         </section>
         <NasaFooter />
